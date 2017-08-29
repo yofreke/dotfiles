@@ -96,3 +96,9 @@ export GPG_TTY=$(tty)
 # GitKraken cli
 alias kraken="open -na 'GitKraken' --args -p $(pwd)"
 # [END git_kraken]
+
+
+# [START default_editor]
+# Default text editor for things like `git`
+export EDITOR='code --wait'
+# [END default_editor]
