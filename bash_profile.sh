@@ -81,9 +81,14 @@ fi
 
 
 # [START brew_node]
-# Use brew installed node
+# Use brew installed node and npm
 export PATH="/usr/local/opt/node@6/bin:$PATH"
 # [END brew_node]
+
+
+# [START yarn_global]
+export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+# [END yarn_global]
 
 
 # [START gpg]
