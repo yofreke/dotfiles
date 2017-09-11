@@ -82,12 +82,18 @@ fi
 
 # [START brew_node]
 # Use brew installed node and npm
-export PATH="/usr/local/opt/node@6/bin:$PATH"
+BREW_NODE_PATH='/usr/local/opt/node@6/bin'
+if [ -d $BREW_NODE_PATH ]; then
+  export PATH="$PATH:$BREW_NODE_PATH"
+fi
 # [END brew_node]
 
 
 # [START yarn_global]
-export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+YARN_GLOBAL_PATH="$HOME/.config/yarn/global/node_modules/.bin"
+if [ -d $YARN_GLOBAL_PATH ]; then
+  export PATH="$PATH:$YARN_GLOBAL_PATH"
+fi
 # [END yarn_global]
 
 
