@@ -68,7 +68,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # [START gcloud]
 # The next line updates PATH for the Google Cloud SDK.
-GCLOUD_SDK_PATH='/Users/Brown/google-cloud-sdk'
+GCLOUD_SDK_PATH="$HOME/google-cloud-sdk"
 if [ -f "${GCLOUD_SDK_PATH}/path.bash.inc" ]; then
   source "${GCLOUD_SDK_PATH}/path.bash.inc"
 fi
