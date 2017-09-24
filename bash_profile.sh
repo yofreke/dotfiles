@@ -113,3 +113,11 @@ alias kraken="open -na 'GitKraken' --args -p $(pwd)"
 # Default text editor for things like `git`
 export EDITOR='code --wait'
 # [END default_editor]
+
+
+# [START user_local_bin]
+USER_LOCAL_BIN_PATH="$HOME/.local/bin"
+if [ -d $USER_LOCAL_BIN_PATH ]; then
+  export PATH="$PATH:$USER_LOCAL_BIN_PATH"
+fi
+# [END user_local_bin]
