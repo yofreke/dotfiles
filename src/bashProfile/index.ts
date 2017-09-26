@@ -1,3 +1,4 @@
+import { generateBashProfile } from './generateBashProfile';
 import * as yargs from 'yargs';
 
 
@@ -10,6 +11,6 @@ export const bashProfileCommand: yargs.CommandModule = <yargs.CommandModule> {
   },
 
   handler: function(argv: yargs.Argv): void {
-    console.log('Hello');
+    generateBashProfile({});
   }
 };
