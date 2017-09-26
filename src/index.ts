@@ -1,3 +1,4 @@
+import { waitForActivePromises } from './activePromises';
 import debug from 'debug';
 import * as yargs from 'yargs';
 import { bashProfileCommand } from './bashProfile';
@@ -14,6 +15,8 @@ const main = function(): void {
     .help('h');
   const commandArguments: yargs.Arguments = localYargs.argv;
   log('commandArguments=', commandArguments);
+
+  waitForActivePromises();
 };
 
 

@@ -1,3 +1,4 @@
+import { addActivePromise } from '../activePromises';
 import { generateBashProfile } from './generateBashProfile';
 import * as yargs from 'yargs';
 
@@ -11,6 +12,8 @@ export const bashProfileCommand: yargs.CommandModule = <yargs.CommandModule> {
   },
 
   handler: function(argv: yargs.Argv): void {
-    generateBashProfile({});
+    addActivePromise(generateBashProfile({
+      cwd: process.cwd()
+    }));
   }
 };
