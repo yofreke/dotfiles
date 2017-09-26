@@ -1,0 +1,15 @@
+{
+  "name": "dotfiles",
+  "version": "0.0.0",
+  "bin": {
+
+  },
+  "scripts": {
+    "watch": "jsio-webpack-v1 --env development --watch",
+    "build": "jsio-webpack-v1 --env development --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@blackstormlabs/jsio-webpack-v1": "^2.2.0"
+  }
+}
