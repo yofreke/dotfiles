@@ -9,11 +9,17 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
+    "debug": "^3.0.1",
     "enquirer": "^1.0.2",
     "mustache": "^2.3.0",
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "@blackstormlabs/jsio-webpack-v1": "^2.2.0"
+    "@blackstormlabs/jsio-webpack-v1": "^2.2.0",
+    "@types/chalk": "^0.4.31",
+    "@types/debug": "^0.0.30",
+    "@types/mustache": "^0.8.30",
+    "@types/node": "^8.0.31",
+    "@types/yargs": "^8.0.2"
   }
 }
