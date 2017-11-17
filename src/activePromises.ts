@@ -19,7 +19,7 @@ export const waitForActivePromises = function(): Promise<void> {
     let tryCount: number = 0;
     const interval = setInterval(() => {
       tryCount++;
-      log('> tryCount=', tryCount);
+      // log('> tryCount=', tryCount);
       // Remove done promises from activePromises
       for (let i = activePromises.length - 1; i >= 0; i--) {
         const promise: Promise = activePromises[i];
