@@ -55,6 +55,14 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # [END pyenv]
 
 
+# [START nvm]
+NVM_INIT_PATH="$HOME/.nvm/nvm.sh"
+if [ -f "${NVM_INIT_PATH}" ]; then
+  source "${NVM_INIT_PATH}"
+fi
+# [END nvm]
+
+
 # [START gcloud]
 # The next line updates PATH for the Google Cloud SDK.
 GCLOUD_SDK_PATH="$HOME/google-cloud-sdk"
