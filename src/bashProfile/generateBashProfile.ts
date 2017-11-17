@@ -5,6 +5,7 @@ import fse from 'fs-extra';
 import Mustache from 'mustache';
 import TEMPLATE_INPUT from 'raw-loader!../../resources/bash_profile/bash_profile.mustache';
 import inquirer from 'inquirer';
+import chalk from 'chalk';
 
 
 const SNIPPETS_DIR: string = path.join(__dirname, '..', 'resources', 'bash_profile', 'snippets');
@@ -38,9 +39,18 @@ const confirmSnippets = function(
   allSnippets: ISnippet[]
 ): Promise<ISnippet[]> {
   const choices = allSnippets.map(s => {
+    let name: string = s.name;
+
+    const firstLine: string = s.content.split('\n')[0];
+    if (firstLine.indexOf('#') === 0) {
+      const tabCount: number = Math.max(2, 3 - Math.floor(s.name.length / 4));
+      name = `${chalk.white(s.name)}:${'\t'.repeat(tabCount)}${chalk.gray(firstLine.substring(1))}`;
+    }
+
     return {
-      name: s.name,
-      checked: true
+      name,
+      checked: true,
+      short: s.name
     };
   });
 
