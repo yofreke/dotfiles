@@ -1,5 +1,9 @@
 # `dotfiles`
 
+**WARNING:** Scripted version below has not been updated in a while, should avoid.
+
+Will be dropping useful stuff in [doc/](./doc) or [static/](./static) for a bit.
+
 ## Installation
 
 ```bash
