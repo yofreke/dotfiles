@@ -301,6 +301,16 @@ maptz.regionfolder
   // Extension config rebornix.ruby: Favor new language server support
   "ruby.useLanguageServer": true,
 
+  // #region Extension config rebornix.ruby: Use rubocop for lint and format
+  "ruby.useBundler": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    }
+  },
+  "ruby.format": "rubocop",
+  // #endregion
+
   // Extension config maptz.regionfolder: Region folding in custom languages
   "maptz.regionfolder": {
     "[haml]": {
