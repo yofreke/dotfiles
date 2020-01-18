@@ -166,155 +166,151 @@ maptz.regionfolder
 
 ```json5
 {
-    // ---- Disable defaults ----
+  // ---- Disable defaults ----
 
-    // Disable default: "automatic updating of import paths when you rename or move a file"
-    // -> I have never had 100% current automatic import updates from JS or TS projects.
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "typescript.updateImportsOnFileMove.enabled": "never",
+  // Disable default: "automatic updating of import paths when you rename or move a file"
+  // -> I have never had 100% current automatic import updates from JS or TS projects.
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "never",
 
-    // Disable default: "explorer should automatically reveal and select files when opening them"
-    // -> Prefer to do on a per file basis, when project has many files.
-    "explorer.autoReveal": false,
+  // Disable default: "explorer should automatically reveal and select files when opening them"
+  // -> Prefer to do on a per file basis, when project has many files.
+  "explorer.autoReveal": false,
 
-    // Disable default: "automatically adjust the indentation when users type, paste ..."
-    "editor.autoIndent": "none",
+  // Disable default: "automatically adjust the indentation when users type, paste ..."
+  "editor.autoIndent": "none",
 
-    // Disable default: "Wrapped lines get the same indentation as the parent."
-    "editor.wrappingIndent": "none",
+  // Disable default: "Wrapped lines get the same indentation as the parent."
+  "editor.wrappingIndent": "none",
 
-    //  ---- Preferences ----
+  //  ---- Preferences ----
 
-    // Preference: Extended light color theme, uses larger pallette
-    "workbench.colorTheme": "Default Light+",
+  // Preference: Extended light color theme, uses larger pallette
+  "workbench.colorTheme": "Default Light+",
 
-    // Preference: By default less of 80 character limit spent on whitespace.
-    "editor.tabSize": 2,
+  // Preference: By default less of 80 character limit spent on whitespace.
+  "editor.tabSize": 2,
 
-    // Preference: Show line in editor, good habit for working on laptops.
-    "editor.rulers": [ 80, 120 ],
+  // Preference: Show line in editor, good habit for working on laptops.
+  "editor.rulers": [80, 120],
 
-    // Preference: Use global installation of eslint if none is found in project
-    // "A path added to NODE_PATH when resolving the eslint module."
-    "eslint.nodePath": "/usr/local/lib/node_modules",
+  // Preference: Use global installation of eslint if none is found in project
+  // "A path added to NODE_PATH when resolving the eslint module."
+  "eslint.nodePath": "/usr/local/lib/node_modules",
 
-    // Preference: Opt in to extension updates, since they have high visibility
-    // to sensitive material.
-    "extensions.autoUpdate": false,
+  // Preference: Opt in to extension updates, since they have high visibility
+  // to sensitive material.
+  "extensions.autoUpdate": false,
 
-    // Preference: Quicker command pallette use
-    // "whether the last typed input ... should be restored when opening it the next time"
-    "workbench.commandPalette.preserveInput": true,
+  // Preference: Quicker command pallette use
+  // "whether the last typed input ... should be restored when opening it the next time"
+  "workbench.commandPalette.preserveInput": true,
 
-    // Preference: Always show location in file on minimap with slider
-    "editor.minimap.showSlider": "always",
+  // Preference: Always show location in file on minimap with slider
+  "editor.minimap.showSlider": "always",
 
-    // Preference: Also source autocomplete from comments and strings
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
+  // Preference: Also source autocomplete from comments and strings
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+
+  // Preference: Scripting is easier with linters, flake8 is good at catching
+  // issues before runtime.
+  "python.linting.flake8Enabled": true,
+
+  // #region Preference: Enable codelens on scripts
+  "javascript.referencesCodeLens.enabled": false,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  // #endregion
+
+  // Preference: Always show available UI
+  "editor.showFoldingControls": "always",
+
+  // ---- Extensions ----
+
+  // #region Extension config vsintellicode: prefer intellisense over recently used
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // #endregion
+
+  // Extension config prettier: Use prettier always
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // #region Extension config vsicons
+  // Usually working on large projects.
+  // "For large projects, local or remote, it's HIGHLY recommended to disable this feature."
+  "vsicons.projectDetection.disableDetect": true,
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
+  // #endregion
+
+  // Extension config redhat.vscode-yaml: Support CloudFormation custom tags
+  // Taken from a github issue, https://github.com/adamvoss/vscode-yaml/issues/16
+  "yaml.customTags": [
+    "!Base64 mapping",
+    "!Equals sequence",
+    "!FindInMap sequence",
+    "!GetAtt",
+    "!GetAtt sequence",
+    "!GetAZs",
+    "!ImportValue",
+    "!Join sequence",
+    "!Ref",
+    "!Select sequence",
+    "!Split sequence",
+    "!Sub"
+  ],
+
+  // #region Extension config todo-tree: Add custom tags, custom colors
+  "todo-tree.filtering.useBuiltInExcludes": true,
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.hideIconsWhenGroupedByTag": true,
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.general.tags": ["BOOKMARK", "TODO", "FIXME"],
+  "todo-tree.highlights.customHighlight": {
+    "BOOKMARK": {
+      "icon": "bookmark",
+      "iconColour": "#6CB8D5",
+      "type": "whole-line",
+      "background": "#6CB8D5",
+      "opacity": 40
     },
-
-    // Preference: Scripting is easier with linters, flake8 is good at catching
-    // issues before runtime.
-    "python.linting.flake8Enabled": true,
-
-    // #region Preference: Enable codelens on scripts
-    "javascript.referencesCodeLens.enabled": false,
-    "javascript.referencesCodeLens.showOnAllFunctions": true,
-    "typescript.implementationsCodeLens.enabled": true,
-    "typescript.referencesCodeLens.enabled": true,
-    "typescript.referencesCodeLens.showOnAllFunctions": true,
-    // #endregion
-
-    // Preference: Always show available UI
-    "editor.showFoldingControls": "always",
-
-    // ---- Extensions ----
-
-    // #region Extension config vsintellicode: prefer intellisense over recently used
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    // #endregion
-
-    // Extension config prettier: Use prettier always
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    // #region Extension config vsicons
-    // Usually working on large projects.
-    // "For large projects, local or remote, it's HIGHLY recommended to disable this feature."
-    "vsicons.projectDetection.disableDetect": true,
-    "workbench.iconTheme": "vscode-icons",
-    "vsicons.dontShowNewVersionMessage": true,
-    // #endregion
-
-    // Extension config redhat.vscode-yaml: Support CloudFormation custom tags
-    // Taken from a github issue, https://github.com/adamvoss/vscode-yaml/issues/16
-    "yaml.customTags": [
-        "!Base64 mapping",
-        "!Equals sequence",
-        "!FindInMap sequence",
-        "!GetAtt",
-        "!GetAtt sequence",
-        "!GetAZs",
-        "!ImportValue",
-        "!Join sequence",
-        "!Ref",
-        "!Select sequence",
-        "!Split sequence",
-        "!Sub"
-    ],
-
-    // #region Extension config todo-tree: Add custom tags, custom colors
-    "todo-tree.filtering.useBuiltInExcludes": true,
-    "todo-tree.general.statusBar": "tags",
-    "todo-tree.tree.expanded": true,
-    "todo-tree.tree.hideIconsWhenGroupedByTag": true,
-    "todo-tree.tree.showCountsInTree": true,
-    "todo-tree.general.tags": [
-      "BOOKMARK",
-      "TODO",
-      "FIXME"
-    ],
-    "todo-tree.highlights.customHighlight": {
-      "BOOKMARK": {
-        "icon": "bookmark",
-        "iconColour": "#6CB8D5",
-        "type": "whole-line",
-        "background": "#6CB8D5",
-        "opacity": 40
-      },
-      "TODO": {
-        "icon": "issue-opened",
-        "iconColour": "#FFBD33",
-        "type": "whole-line",
-        "background": "#FFBD33",
-        "opacity": 40
-      },
-      "FIXME": {
-        "icon": "alert",
-        "iconColour": "#D3573D",
-        "background": "#D3573D",
-        "type": "whole-line",
-        "opacity": 40
-      }
+    "TODO": {
+      "icon": "issue-opened",
+      "iconColour": "#FFBD33",
+      "type": "whole-line",
+      "background": "#FFBD33",
+      "opacity": 40
     },
-    // #endregion
-
-    // Extension config rebornix.ruby: Favor new language server support
-    "ruby.useLanguageServer": true,
-
-    // Extension config maptz.regionfolder: Region folding in custom languages
-    "maptz.regionfolder": {
-        "[haml]": {
-            "foldEndRegex": "^[\\t ]*-[#\\t ]*#endregion[^\\n]*$",
-            "foldStartRegex": "^[\\t ]*-[#\\t ]*#region[^\\n]*$"
-        },
-        "[ruby]": {
-            "foldEndRegex": "^[#\\t ]*#endregion[^\\n]*$",
-            "foldStartRegex": "^[#\\t ]*#region[^\\n]*$"
-        }
+    "FIXME": {
+      "icon": "alert",
+      "iconColour": "#D3573D",
+      "background": "#D3573D",
+      "type": "whole-line",
+      "opacity": 40
     }
+  },
+  // #endregion
+
+  // Extension config rebornix.ruby: Favor new language server support
+  "ruby.useLanguageServer": true,
+
+  // Extension config maptz.regionfolder: Region folding in custom languages
+  "maptz.regionfolder": {
+    "[haml]": {
+      "foldEndRegex": "^[\\t ]*-[#\\t ]*#endregion[^\\n]*$",
+      "foldStartRegex": "^[\\t ]*-[#\\t ]*#region[^\\n]*$"
+    },
+    "[ruby]": {
+      "foldEndRegex": "^[#\\t ]*#endregion[^\\n]*$",
+      "foldStartRegex": "^[#\\t ]*#region[^\\n]*$"
+    }
+  }
 }
 ```
