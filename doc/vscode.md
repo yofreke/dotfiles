@@ -279,21 +279,21 @@ maptz.regionfolder
       "iconColour": "#6CB8D5",
       "type": "whole-line",
       "background": "#6CB8D5",
-      "opacity": 40
+      "opacity": 18
     },
     "TODO": {
       "icon": "issue-opened",
       "iconColour": "#FFBD33",
       "type": "whole-line",
       "background": "#FFBD33",
-      "opacity": 40
+      "opacity": 18
     },
     "FIXME": {
       "icon": "alert",
       "iconColour": "#D3573D",
       "background": "#D3573D",
       "type": "whole-line",
-      "opacity": 40
+      "opacity": 18
     }
   },
   // #endregion
